@@ -6,7 +6,7 @@
 
  #### What functionality do I want of each page ?
 
- * Home ppage
+ * Home page
   * Welcome user to page
 * About page
   * information about myself and interest for starting
