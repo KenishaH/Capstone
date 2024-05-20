@@ -6,7 +6,7 @@
 
  #### What functionality do I want of each page ?
 
- * Home ppage
+ * Home page
   * Welcome user to page
 * About page
   * information about myself and interest for starting
@@ -46,7 +46,9 @@
 
 <!-- Research -->
  * Calender syncing
- * API to be used
+ * API to be used 
+ [calender](https://docs.abstractapi.com/holidays)
+ 
 [Doggy Rover](https://www.rover.com)
 * I like it offers a variety of services
 * I do not like the structure of homepage.
