@@ -1,2 +1,2 @@
-mport html from "html-literal";
+import html from "html-literal";
 export default () => html``;
