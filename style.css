@@ -1,27 +1,32 @@
-
+body{
+    font-family: lora, scan-serif;
+}
+h1 , h2{
+    font-family: merriweather, serif;
+}
 //*section#aboutMe *//
 #aboutMe  {
     text-align: center;
     color: #35424a;
 }
 #aboutMe {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto
-
+    border-width:5px;
+    border-color:#864d25;
+    border-style: solid;
 }#aboutMe  {
-    font-size:
-    line-height: ;
+    font-size: 20px;
+    line-height:1.6 ;
     text-align: justify;
 }
 /*section#contact */
 
+.contact{
+    font-size: 30px;
 
-#contact{
-    font size : ;
 }
-
+.highlight{
+background: #5699e7;
+}
 
 
 
