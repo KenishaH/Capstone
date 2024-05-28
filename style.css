@@ -1,0 +1,54 @@
+body{
+    font-family: lora, scan-serif;
+}
+h1 , h2{
+    font-family: merriweather, serif;
+}
+//*section#aboutMe *//
+#aboutMe  {
+    text-align: center;
+    color: #35424a;
+}
+#aboutMe {
+    border-width:5px;
+    border-color:#864d25;
+    border-style: solid;
+}#aboutMe  {
+    font-size: 20px;
+    line-height:1.6 ;
+    text-align: justify;
+}
+/*section#contact */
+
+.contact{
+    font-size: 30px;
+
+}
+.highlight{
+background: #5699e7;
+}
+
+
+
+    .navbar {
+        justify-content: flex-end;
+    }
+    .navbar a {
+        margin: 0 20px;
+    }
+    .section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .section > div {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+
