@@ -7,7 +7,7 @@ export default () => html`
      <label for =" Provider Name">Name</label>
         <input type="text" name =" first name" id = "name" required
       <label for = "Last Name"> lastName </label>
-        <input type="text" lastName =" last name" required
+        <input type="text" lastName =" lastname" required
 
       <label for ="Number">Phone Number</label>
         <input type= "text" number =" 773-312-8000" required
