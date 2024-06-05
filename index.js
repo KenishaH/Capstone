@@ -46,6 +46,7 @@ router.hooks({
       `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&units=imperial&q=st%20louis`
     )
     .then(response => {
+      console.log("Weather Data", response.data);
       // Create an object to be stored in the Home state from the response
       store.home.weather = {
         city: response.data.name,
@@ -68,24 +69,8 @@ router.hooks({
     done();
   });
   break;
-
-      case "pizza":
-        // New Axios get request utilizing already made environment variable
-        axios
-          .get(`${process.env.PIZZA_PLACE_API_URL}/pizzas`)
-          .then(response => {
-            // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
-            console.log("response", response);
-            store.pizza.pizzas = response.data;
-            done();
-          })
-          .catch((error) => {
-            console.log("It puked", error);
-            done();
-          });
-          break;
-      default :
-        done();
+default :
+done();
     }
   },
   already: (params) => {
@@ -94,35 +79,6 @@ router.hooks({
     render(store[view]);
   }
 });
-
-      case "pizza":
-        // New Axios get request utilizing already made environment variable
-        axios
-          .get(`${process.env.PIZZA_PLACE_API_URL}/pizzas`)
-          .then(response => {
-            // We need to store the response to the state, in the next step but in the meantime let's see what it looks like so that we know what to store from the response.
-            console.log("response", response);
-            store.pizza.pizzas = response.data;
-            done();
-          })
-          .catch((error) => {
-            console.log("It puked", error);
-            done();
-          });
-          break;
-      default :
-        done();
-    }
-  }
-  already: (params) => {
-    const view = params && params.data && params.data.view ? camel(params.data.view) : "home";
-
-    render(store[view]);
-  }
-});
-
-
-
 router
 .on({
   "/": () => render(),
