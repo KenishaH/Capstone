@@ -48,6 +48,7 @@
  * Calender syncing
  * API to be used :
  [calender](https://docs.abstractapi.com/holidays)
+ [calender2](https://calendarific.com/)
 
 
 [Doggy Rover](https://www.rover.com)
