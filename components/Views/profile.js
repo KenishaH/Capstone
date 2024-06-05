@@ -27,7 +27,13 @@ export default () => html`
 
       <h3 id=" Emergency Contact">Emergency Contact</h3>
       <label for="Emergency Cintact">Emergency Contact :</label>
-      <input type="text" id="name" name="name" Number=" 773-312-8000" required
+      <input
+        type="text"
+        id="name"
+        name="name"
+        Number=" 773-312-8000"
+        required
+      />
     </form>
   </section>
 `;

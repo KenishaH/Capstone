@@ -2,13 +2,14 @@ import html from "html-literal";
 
 export default () => html`
 <section id = "Contact";
-<h2 id = "Get in contact "> Get in touch</h2>
+<h2 id = "Get In contact "> Get in touch</h2>
 <P><span class = "highlight"> Email : 24pawsph@gmail.com</span></P>
 <form>
-  <label for = "comment"> Any questions/comments: </label>
-  <input type ="comment"
-  id = "comment" name ="comment >
+<label for="comment">Comment or Question</label>
+            <textarea id="comment" name="comment" rows="5" required></textarea>
+  <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
 </form>
-//* <p><b> Comments </b></p> */
+
 </section>
 `;

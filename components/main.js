@@ -1,2 +1,6 @@
 import html from "html-literal";
-export default () => html``;
+import * as views from "./Views";
+
+export default state => html`
+  ${views[state.view](state)}
+`;
