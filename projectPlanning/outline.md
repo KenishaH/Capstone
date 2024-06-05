@@ -46,10 +46,10 @@
 
 <!-- Research -->
  * Calender syncing
- * API to be used :
+ * 3 API to be used :
  [calender](https://docs.abstractapi.com/holidays)
  [calender2](https://calendarific.com/)
-
+[Google](https://developers.google.com/calendar)
 
 [Doggy Rover](https://www.rover.com)
 * I like it offers a variety of services
