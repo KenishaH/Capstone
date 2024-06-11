@@ -5,3 +5,4 @@ export { default as profile } from "./profile";
 export { default as profileProvider } from "./profileProvider";
 export { default as service } from "./service";
 export { default as review } from "./review";
+export { default as nav } from "./nav";

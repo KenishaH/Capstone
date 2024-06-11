@@ -1,4 +1,4 @@
 export default {
-    header: "Provider Profile",
-    view: "providerProfile"
-  };
+  header: "Provider Profile",
+  view: "providerProfile"
+};

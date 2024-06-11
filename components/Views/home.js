@@ -1,5 +1,8 @@
 import html from "html-literal";
 
 export default state => html`
-  <a href="index.htm">home</a>
+  <section id="jumbotron">
+    <h2>Paws Playhouse</h2>
+    <a href="index.htm">Home</a>
+  </section>
 `;
