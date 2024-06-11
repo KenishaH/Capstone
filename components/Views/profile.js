@@ -26,7 +26,15 @@ export default () => html`
       <input type="text" id="color" color="text " required />
 
       <h3 id=" Emergency Contact">Emergency Contact</h3>
-      <label for="Emergency Cintact">Emergency Contact :</label>
+      <label for=" Contact Name">Name :</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        Number=" 773-312-8000"
+        required
+      />
+      <label for=" Contact Number">Number :</label>
       <input
         type="text"
         id="name"

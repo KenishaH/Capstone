@@ -79,6 +79,8 @@ done();
     render(store[view]);
   }
 });
+
+
 router
 .on({
   "/": () => render(),

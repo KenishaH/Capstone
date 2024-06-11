@@ -3,23 +3,23 @@ import aboutMe from "../../images/aboutMe.jpg";
 
 export default () => html`
   <section id="aboutMe">
-    <h2 id="aboutMe">About Me</h2>
+    <h2 id="aboutMe"></h2>
     <img src="${aboutMe}" alt="me" />
 
     <p>
       Welcome to 24hrs paws Playhosue . As founder of this webiste my name is
-      Ke'Nisha Hope. I have my degree from Harris-Stowe State University . I am
-      chicago born and rasied. Who has recently relocated to St.Louis for
-      college.
+      Ke'Nisha Hope. I have my B.A in Inofrmation systems and Computer sciences
+      from Harris-Stowe Stae University.I am chicago born and rasied. Recently I
+      have relocated to St.Louis to further my education.
     </p>
     <p>
-      Recently I have adpoted a dog by the name of Max. With this big change in
-      my life I always have to take upon another respsonbility.I am a dog owner
-      who has a love for tarveling.I have a care for dogs and the wellbeing of
-      their saftey. One common problem I often run into when wanting to travel
-      is finding a dog siiter for long periods of times. This had lead me to
-      create a network to help other find effiecent sitters for days or even a
-      day.
+      I have adopted a dog named Max, which has brought significant changes and
+      responsibilities into my life. As a passionate dog owner and avid
+      traveler, I care deeply about the safety and well-being of dogs. One
+      common challenge I face when traveling is finding a reliable dog sitter
+      for extended periods. This inspired me to create a network that helps
+      fellow dog owners find efficient sitters, whether for a single day or
+      longer durations.
     </p>
   </section>
 `;
