@@ -1,4 +1,4 @@
 export default {
-    header: "Review",
-    view: "review"
-  };
+  header: "Review",
+  view: "review"
+};

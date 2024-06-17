@@ -1,5 +1,5 @@
 #jumbotron{
-background-image: url(images/Logo.jpg) center center no-repeat;
+background: url(images/Logo.jpg) center center no-repeat;
 background-size: cover;
 display:flex;
 height: 300px;
