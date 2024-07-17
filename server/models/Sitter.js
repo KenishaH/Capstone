@@ -18,8 +18,7 @@ const sitterSchema = new mongoose.Schema({
     type: String,
     required: true,
     validate: /^[A-Za-z0-9 ]*$/
-  },
-  service: [String]
+  }
 });
 
 const sitter = mongoose.model("Sitter", sitterSchema);

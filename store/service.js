@@ -1,4 +1,5 @@
 export default {
   header: "Service",
-  view: "service"
+  view: "service",
+  owners: []
 };

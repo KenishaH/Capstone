@@ -17,8 +17,7 @@ const ownerSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: true,
-    validate: /^[A-Za-z0-9 ]*$/
+    required: true
   },
   dogName: {
     type: String,
