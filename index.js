@@ -24,8 +24,42 @@ function afterRender(state) {
   document.querySelector(".nav-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
+if (state.view === "home") {
+    // Add an event handler for the submit button on the form
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+      const inputList = event.target.elements;
+console.log("Input List: ", inputList);
+axios
+// Get request to retrieve the current weather data using the API key and providing a city name
+.get(
+  `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&units=imperial&q=${inputList.zipcode.value}`
+)
+.then(response => {
+  // Create an object to be stored in the Home state from the response
+  store.home.weather = {
+    city: response.data.name,
+    temp: response.data.main.temp,
+    feelsLike: response.data.main.feels_like,
+    description: response.data.weather[0].main
+  };
+router.navigate("/home");
+  // An alternate method would be to store the values independently
+  /*
+  store.Home.weather.city = response.data.name;
+  store.Home.weather.temp = kelvinToFahrenheit(response.data.main.temp);
+  store.Home.weather.feelsLike = kelvinToFahrenheit(response.data.main.feels_like);
+  store.Home.weather.description = response.data.weather[0].main;
+  */
+})
+.catch((err) => {
+console.log(err);
+});
+    });
 
-  if (state.view === "owner") {
+  }
+
+  if (state.view === "ownerProfile") {
     // Add an event handler for the submit button on the form
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
@@ -37,9 +71,9 @@ function afterRender(state) {
       // Create an empty array to hold the toppings
       const service = [];
 
-      // Iterate over the toppings array
+      // Iterate over the service array
 
-      for (let input of inputList.toppings) {
+      for (let input of inputList.service) {
         // If the value of the checked attribute is true then add the value to the toppings array
         if (input.checked) {
           service.push(input.value);
@@ -48,22 +82,28 @@ function afterRender(state) {
 
       // Create a request body object to send to the API
       const requestData = {
-        customer: inputList.customer.value,
-        crust: inputList.crust.value,
-        cheese: inputList.cheese.value,
-        sauce: inputList.sauce.value,
-        toppings: toppings
+        firstName: inputList.firstName.value,
+        lastName: inputList.lastName.value,
+        email: inputList.email.value,
+        phoneNumber: inputList.phoneNumber.value,
+        dogName: inputList.dogName.value,
+        dogColor: inputList.dogColor.value,
+        dogBreed: inputList.dogBreed.value,
+        contactName: inputList.contactName.value,
+        contactNumber: inputList.contactNumber.value,
+        service: service,
+
       };
       // Log the request body to the console
       console.log("request Body", requestData);
 
       axios
         // Make a POST request to the API to create a new pizza
-        .post(`${process.env.PIZZA_PLACE_API_URL}/pizzas`, requestData)
+        .post(`${process.env.PAWSPLAYHOUSE_PLACE_API_URL}/owners`, requestData)
         .then(response => {
-        //  Then push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
-          store.pizza.pizzas.push(response.data);
-          router.navigate("/pizza");
+          //  Then push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
+          store.review.owner.push(response.data);
+          router.navigate("/review");
         })
         // If there is an error log it to the console
         .catch(error => {
@@ -86,37 +126,41 @@ router.hooks({
     // Add a switch case statement to handle multiple routes
     switch (view) {
       // Add a case for each view that needs data from an API
-      case "service":
-  axios
-    // Get request to retrieve the current weather data using the API key and providing a city name
-    .get(
-      `https://calendarific.com/api/v2/holidays?api_key=${process.env.HOLIDAYS_API_KEY}&country=US&year=2024`
-    )
-    .then(response => {
-      console.log("Holidays", response.data);
-      // Create an object to be stored in the Home state from the response
-      store.service.holidays = response.data.response.holidays;
+      // case "home":
+      //   axios
+      //   // Get request to retrieve the current weather data using the API key and providing a city name
+      //   .get(
+      //     `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&units=imperial&q=60624`
+      //   )
+      //   .then(response => {
+      //     // Create an object to be stored in the Home state from the response
+      //     store.home.weather = {
+      //       city: response.data.name,
+      //       temp: response.data.main.temp,
+      //       feelsLike: response.data.main.feels_like,
+      //       description: response.data.weather[0].main
+      //     };
 
-      // An alternate method would be to store the values independently
-      /*
-      store.Home.weather.city = response.data.name;
-      store.Home.weather.temp = kelvinToFahrenheit(response.data.main.temp);
-      store.Home.weather.feelsLike = kelvinToFahrenheit(response.data.main.feels_like);
-      store.Home.weather.description = response.data.weather[0].main;
-      */
-      done();
-  })
-  .catch((err) => {
-    console.log(err);
-    done();
-  });
-  break;
-default :
-done();
+      //     // An alternate method would be to store the values independently
+      //     /*
+      //     store.Home.weather.city = response.data.name;
+      //     store.Home.weather.temp = kelvinToFahrenheit(response.data.main.temp);
+      //     store.Home.weather.feelsLike = kelvinToFahrenheit(response.data.main.feels_like);
+      //     store.Home.weather.description = response.data.weather[0].main;
+      //     */
+      //     done();
+      // })
+      // .catch((err) => {
+      //   console.log(err);
+      //   done();
+      // });
+      // break;
+      default:
+        done();
     }
   },
   already: (params) => {
-    const view = params && params.data && params.data.view ? camel(params.data.view) : "home";
+    const view = params && params.data && params.data.view ? camelCase(params.data.view) : "home";
 
     render(store[view]);
   }
@@ -124,20 +168,20 @@ done();
 
 
 router
-.on({
-  "/": () => render(),
-  // Use object destructuring assignment to store the data and (query)params from the Navigo match parameter
-  // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
-  // This reduces the number of checks that need to be performed
-  ":view": ({ data, params }) => {
-    // Change the :view data element to camel case and remove any dashes (support for multi-word views)
+  .on({
+    "/": () => render(),
+    // Use object destructuring assignment to store the data and (query)params from the Navigo match parameter
+    // (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+    // This reduces the number of checks that need to be performed
+    ":view": ({ data, params }) => {
+      // Change the :view data element to camel case and remove any dashes (support for multi-word views)
       const view = data?.view ? camelCase(data.view) : "home";
-    if (view in store) {
-      render(store[view]);
-    } else {
-      render(store.viewNotfound);
-      console.log(`View ${view} not defined`);
-    }
-  },
-})
-.resolve();
+      if (view in store) {
+        render(store[view]);
+      } else {
+        render(store.viewNotfound);
+        console.log(`View ${view} not defined`);
+      }
+    },
+  })
+  .resolve();

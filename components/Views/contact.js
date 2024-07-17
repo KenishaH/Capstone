@@ -10,6 +10,7 @@ export default () => html`
       <textarea id="comment" name="comment" rows="5" required></textarea>
       <label for="email">Email</label>
       <input type="email" id="email" name="email" required />
+      <input type="submit" name="submit" value="SUBMIT" />
     </form>
   </section>
 `;

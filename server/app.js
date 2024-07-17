@@ -2,6 +2,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import owners from "./routers/owners.js";
+import sitters from "./routers/sitter.js";
 //import pizzas from "./routers/pizzas.js";
 
 // Load environment variables from .env file
@@ -64,7 +66,8 @@ app.get("/status", (request, response) => {
 });
 
 // app.use("/pizzas", pizzas);
-
+app.use("/owners", owners);
+app.use("/sitters", sitters);
 // Tell the Express app to start listening
 // Let the humans know I am running and listening on 4040
 app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));

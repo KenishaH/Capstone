@@ -1,13 +1,11 @@
-#jumbotron{
-background: url(images/Logo.jpg) center center no-repeat;
-background-size: cover;
-display:flex;
-height: 300px;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-}
+#jumbotron {
+    background: url(images/Logo.jpg) center center no-repeat;  background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+  }
 
 
 body{
@@ -91,7 +89,7 @@ form label {
 }
 
 
-@media (min-width: 600px) {
+/* @media (max-width: 600px) {
     .select button {
       padding: 15px 30px;
       font-size: 18px;
@@ -100,3 +98,6 @@ form label {
     nav > .fa-bars {
         display: none;
       }
+      @media(min-wdith: 550px;){
+
+      } */
